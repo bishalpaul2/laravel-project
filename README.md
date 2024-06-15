@@ -119,6 +119,7 @@ This Laravel project allows users to upload Excel files, preview their content, 
 - Ensure the uploaded file is an Excel file (`.xlsx`).
 - Validate the required columns in the Excel file.
 - Handle missing or incorrect data gracefully by displaying appropriate error messages.
+- Validate user fields in the form
 
 
 ## Acknowledgements
