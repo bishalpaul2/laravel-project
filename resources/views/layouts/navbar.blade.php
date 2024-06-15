@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{{ route('home') }}">
-        <img src="https://www.nic.in/wp-content/themes/NICTheme/assets/images/logo.png" alt="NIC Logo" class="d-inline-block align-top" style="height: 40px;">
+        <img src="https://www.nic.in/wp-content/themes/NICTheme/assets/images/logo.png" alt="NIC Logo"
+            class="d-inline-block align-top" style="height: 40px;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,9 +13,12 @@
             <li class="nav-item m-4 {{ request()->routeIs('user-excel-data') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('user-excel-data') }}">Dashboard</a>
             </li>
-            <li class="nav-item m-4 {{ request()->routeIs('create-user') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('create-user') }}">Create User <span class="sr-only">(current)</span></a>
-            </li>
+            @if ($authUser->role !== 'staff')
+                <li class="nav-item m-4 {{ request()->routeIs('create-user') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('create-user') }}">Create User <span
+                            class="sr-only">(current)</span></a>
+                </li>
+            @endif
             <li class="nav-item m-4 {{ request()->routeIs('upload-excel') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('upload-excel') }}">Upload</a>
             </li>

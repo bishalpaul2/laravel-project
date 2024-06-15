@@ -10,6 +10,7 @@ This Laravel project allows users to upload Excel files, preview their content, 
 - Preview Excel file content before saving to the database
 - Store Excel data into the database
 - View Multiple Excel File Data as per File Name and User
+- Staff Dashboard where role based Dashboard menu is displayed (default password:1234)
 
 ## Requirements
 

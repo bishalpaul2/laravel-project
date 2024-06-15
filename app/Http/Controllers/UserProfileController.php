@@ -29,7 +29,7 @@ class UserProfileController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
-            'new_password' => 'nullable|string|min:8|confirmed',
+            'new_password' => 'nullable|string',
         ]);
 
         $user = Auth::user();
@@ -51,21 +51,23 @@ class UserProfileController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => '1234',
+            'password' => 'string',
         ]);
 
         if ($validator->fails()) {
             return redirect()->route('create-user')->withErrors($validator)->withInput();
         }
 
-        $user = User::create([
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make('1234'),
             'createdBy' => auth()->id(),
             'role' => $request->role ?? 'staff',
         ]);
-
+        if (Hash::check('1234', Hash::make($request->password))) {
+            echo ("The passwords match...");
+        }
         return redirect()->route('create-user')->with('success', 'User created successfully');
     }
 }

@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('upload-excel', [FileUploadController::class, 'uploadExcel'])->name('upload-excel');
     Route::post('store-excel', [FileUploadController::class, 'storeExcel'])->name('store-excel');
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::post('update-profile', [UserProfileController::class, 'update'])->name('profile.update');
+    Route::post('update-profile', [UserProfileController::class, 'update'])->name('profile-update');
 
     Route::middleware('role:admin')->group(function () {
         Route::post('create-user', [UserProfileController::class, 'create'])->name('profile.create');
