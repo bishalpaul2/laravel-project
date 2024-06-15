@@ -93,9 +93,9 @@ This Laravel project allows users to upload Excel files, preview their content, 
 - `app/Http/Controllers/Controller.php`: Base controller class with authorization and validation.
 - `resources/views/excel/upload-excel.blade.php`: View for uploading Excel files.
 - `resources/views/excel/preview-excel.blade.php`: View for previewing the uploaded Excel data.
-- `resources/views/excel/user-excel-data.blade.php`: View for displaying the uploaded data by the user.
+- `resources/views/excel/user-excel-data.blade.php`: View for displaying the uploaded data by the user in users dashboard.
 - `resources/views/admin/create-user.blade.php`: View for creating a new user and displaying created users.
-- `resources/views/admin/dashboard.blade.php`: View for displaying the admin dashboard.
+- `resources/views/admin/home.blade.php`: View for displaying the landing page.
 
 ## Routes
 
