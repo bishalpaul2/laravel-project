@@ -15,7 +15,7 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
 
-        return view('admin.dashboard', [
+        return view('admin.home', [
             'user' => $user,
         ]);
     }
