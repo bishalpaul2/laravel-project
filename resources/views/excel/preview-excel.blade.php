@@ -41,6 +41,7 @@
             </table>
 
             <button type="submit" class="btn btn-success">Confirm and Upload</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location='{{ route('upload-excel') }}'">Cancel</button>
         </form>
     </div>
 @endsection
